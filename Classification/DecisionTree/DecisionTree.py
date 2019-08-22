@@ -60,11 +60,7 @@ def predictTree(x, tree):
         columnIndex = list(tree.keys())[0]
         threshold, left, right = tree[columnIndex]
 
-        if x[columnIndex] <= threshold:
-                answer = left
-        else:
-                answer = right
-
+        answer = left if x[columnIndex] <= threshold else right
 
         if isinstance(answer,dict):
                 return predictTree(x, answer)
