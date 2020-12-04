@@ -60,8 +60,9 @@ trees = []
 
 for i in range(numberEstimators):
 	subSampleSize = round(subSample*X_train.shape[0])
+
+	# Random sampling to create subsets of observations and features
 	order = np.random.choice(range(X_train.shape[0]),size = subSampleSize, replace = bootStrap)
-	
 	X_train_sample = X_train[order,:]
 	Y_train_sample = Y_train[order]
 	

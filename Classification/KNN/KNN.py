@@ -27,7 +27,7 @@ yp = []
 
 # Predicting a KNN
 for i in range(X_test.shape[0]):
-	d = computeDistance(X_test[i,:],X_train,'eucleadean')
+	d = computeDistance(X_test[i,:],X_train,'manhattan')
 	yi = computeNeighbors(d,Y_train,K)
 	yp.append(yi)
 	

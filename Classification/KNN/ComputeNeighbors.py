@@ -2,14 +2,24 @@ import numpy as np
 
 # code to compute Nearest Neightbors
 """
-K Neighbors with lowest distance are returned. 
-Returns the class of majority votes
-Returns a array (1,)
+K Neighbors with lowest distance are returned
 
-Note: As a practice, also write a code handling case when no class has a majority
+Returns a array (K,)
 
 """
 
 def computeNeighbors(d,y,K):
     # Write your code here
-    return max_class
+    y = np.array(y).ravel()
+    d = np.array(d).ravel()
+
+    d,y = zip(*sorted(zip(d,y)))
+
+    y = list(y[0:K])
+    max_class = max(set(y),key=y.count)
+    
+    if len(list(set(y))) != len(y) or len(y)==1:
+    	return max_class 
+    else:
+    	print("Warning : Conflict has arised. Please increase Neighbors.")
+    	return None

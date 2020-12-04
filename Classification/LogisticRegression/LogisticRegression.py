@@ -11,7 +11,7 @@ from GradientDescent import gradientDescent
 from StandardScaler import normalize, denormalize
 
 # Reading and loading X and y
-dataset = pd.read_csv("C://Users//Ratan Singh//Desktop//ML Training Code//Classification//LogisticRegression//Banknote_authentication.csv")
+dataset = pd.read_csv("C://Users//Ratan Singh//Desktop//ML Training Code//Classification//LogisticRegression//BreastCancer.csv")
 n = dataset.shape[1] - 1
 X = np.array(dataset.iloc[:,0:n])
 y = np.array(dataset.iloc[:,n])

@@ -4,16 +4,6 @@ import numpy as np
 
 def computeEntropyCost(y,yp):
 
-    """
-    Entropy cost can be given as 
-    J = - mean[ylog(yp)+(1-y)log(yp)]
-
-    J  :  Cost funtion
-    y  :  True target value
-    yp :  Predicted target value
-
-    """
-
     # Write your code here
     y = np.array(y).ravel()
     yp = np.array(yp).ravel()

@@ -10,7 +10,7 @@ from SelectClass import selectClass
 from SplitData import splitData
 
 # Reading and loading X and y
-dataset = pd.read_csv("Banknote_authentication.csv")
+dataset = pd.read_csv("C://Users//Ratan Singh//Desktop//ML Training Code//Classification//LogisticRegression//Banknote_authentication.csv")
 n = dataset.shape[1] - 1
 X = np.array(dataset.iloc[:,0:n])
 y = np.array(dataset.iloc[:,n])
@@ -60,7 +60,11 @@ def predictTree(x, tree):
         columnIndex = list(tree.keys())[0]
         threshold, left, right = tree[columnIndex]
 
-        answer = left if x[columnIndex] <= threshold else right
+        if x[columnIndex] <= threshold:
+                answer = left
+        else:
+                answer = right
+
 
         if isinstance(answer,dict):
                 return predictTree(x, answer)
